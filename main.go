@@ -1,14 +1,11 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/ejercicios"
-	"fmt"
+	"Github/Ch1nolas/Curso-Go/teclado"
 )
 
 func main() {
-	numero, texto := ejercicios.ConvNumerico("fff")
-	fmt.Println(numero)
-	fmt.Println(texto)
+	teclado.IngresoNumeros()
 }
 
 /* Códigos de pruebas
@@ -36,4 +33,8 @@ case "darwin":
 default:
 	fmt.Printf("%s \n", os)
 }
+
+	numero, texto := ejercicios.ConvNumerico("fff")
+	fmt.Println(numero)
+	fmt.Println(texto)
 */
