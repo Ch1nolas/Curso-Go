@@ -1,11 +1,14 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/ejercicios"
+	"Github/Ch1nolas/Curso-Go/files"
 )
 
 func main() {
-	ejercicios.Tablademultilplicar()
+
+	files.LeoArchivo()
+	//files.SumaTabla()
+	//files.GrabaTabla()
 
 }
 
@@ -38,4 +41,7 @@ default:
 	numero, texto := ejercicios.ConvNumerico("fff")
 	fmt.Println(numero)
 	fmt.Println(texto)
+
+	fmt.Println(ejercicios.TabladeMultiplicar())
+
 */
