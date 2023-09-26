@@ -1,12 +1,16 @@
-# Mi documentación
+# Mi Documentación
 
-Para iniciar un proyecto en go
+## Iniciar un Proyecto Go
+
+Para iniciar un proyecto en Go, utiliza el siguiente comando:
 
 ```bash
 go mod init Github/Ch1nolas/Curso-Go (path)
 ```
 
-A la hora de crear un archivo GO es fundamental que la primera línea sea el package "nombre de la carpeta a donde corresponde"
+## Estructura de un Archivo Go
+
+Es fundamental que la primera línea de un archivo Go indique a qué paquete pertenece. Puedes hacerlo de la siguiente manera:
 
 ```go
 package main // Es cuando es el archivo main y no está en ninguna subcarpeta
@@ -14,6 +18,8 @@ package variables // En este caso es un archivo que está dentro de la subcarpet
 ```
 
 ## Importar paquetes
+
+Para importar paquetes en Go, utiliza el siguiente formato:
 
 ```go
 import (
@@ -23,6 +29,8 @@ import (
 
 ## Funciones
 
+Aquí tienes un ejemplo de una función básica en Go:
+
 ```go
 func main() {
 fmt.Println("Hola Mundo")
@@ -31,11 +39,15 @@ fmt.Println("Hola Mundo")
 
 ## Ejecutar código
 
+Para ejecutar un programa Go, utiliza el comando:
+
 ```bash
 go run main.go
 ```
 
 ## Compilar código
+
+Para compilar un programa Go, utiliza el comando:
 
 ```shell
 go build main.go
@@ -43,8 +55,7 @@ go build main.go
 
 ## Variables públicas
 
-La variable tiene que comenzar con **mayúscula**
-Declaración de variables
+Las variables públicas en Go deben comenzar con una letra mayúscula. Por ejemplo:
 
 ```go
 var intcomun int
@@ -59,6 +70,8 @@ import (
 ```
 
 ## Condicionales
+
+Ejemplo básico de un condicional 'if' en Go:
 
 ```go
 //Ejemplobásico del if
@@ -77,36 +90,28 @@ fmt.Println("Esto es un windows")
 }
 ```
 
-Operadores condicioneales
+Operadores condicionales en Go:
 
-```go
-==
-->
--<
-=>
-=<
-&&
-||
-```
+- `==` (igual a)
+- `!=` (no igual a)
+- `<` (menor que)
+- `>` (mayor que)
+- `<=` (menor o igual que)
+- `>=` (mayor o igual que)
+- `&&` (y lógico)
+- `||` (o lógico)
 
-Método Switch
+Método 'switch' en Go:
 Te permite dejar por defecto ciertas consignas para que si se cumple una, se realize su respectiva reacción. Y el default sirve para todas las otras opciones que no hemos puesto, en este ejemplo sirve para los otros tipos de sistemas operativos que no hemos mencionado en los case. **Se recomienda utilizar para cuando se tiene más de 2 condiciones en el if**
 
 ```go
 switch os := runtime.GOOS; os {
-
   case "linux":
-
     fmt.Println("Esto es Linux")
-
   case "darwin":
-
     fmt.Println("Esto es Darwin")
-
   default:
-
     fmt.Printf("%s \n", os)
-
   }
 ```
 
@@ -179,9 +184,11 @@ Donde acá omite al número 6 y sigue con el for
 
 ## Manejo de archivos
 
-**Revisar y hacer teoría**
+**Revisar y hacer teoría Clase 17**
 
 ## Funciones Anónimas
+
+Las funciones anónimas en Go se crean sin un nombre y se pueden asignar a variables. Aquí tienes un ejemplo:
 
 ```go
 func Calculos() {
@@ -193,6 +200,8 @@ func Calculos() {
 ```
 
 ## Closures
+
+Los closures en Go son funciones que capturan variables del entorno en el que se crean. Aquí tienes un ejemplo:
 
 ```go
 func tabla(valor int) func() int {
@@ -210,5 +219,78 @@ func LlamarClosure() {
   for i := 1; i <= 10; i++ {
     fmt.Println(MiTabla())
   }
+}
+```
+
+## Recursion
+
+La recursión en Go se refiere a la capacidad de una función de llamarse a sí misma. Aquí tienes un ejemplo:
+
+```go
+func Exponencia(valor int) {
+  if valor > 100000000 {
+    return
+  }
+  fmt.Println(valor)
+  Exponencia(valor * 2)
+}
+```
+
+## Arreglos
+
+Los arreglos en Go son colecciones de elementos de un solo tipo de datos. Aquí tienes un ejemplo de declaración y uso de arreglos en Go:
+
+```go
+var tabla [10]int = [10]int{10, 0, 59}
+var matriz [20][30]int
+
+func MuestroArreglos() {
+  tabla[7] = 33
+  tabla[2] = 54
+ 
+  tabla2 := [10]string{"Chinolas", "Matias"}
+  fmt.Println(tabla)
+  fmt.Println(tabla2)
+
+  for i := 0; i < len(tabla); i++ {
+    fmt.Println(tabla[i])
+  }
+ 
+  matriz[7][24] = 15
+  fmt.Println(matriz)
+}
+```
+
+## Slices
+
+Los slices en Go son estructuras de datos dinámicas que permiten una capacidad flexible. Aquí tienes un ejemplo de declaración y uso de slices en Go:
+
+```go
+var tablaS []int = []int{2, 5, 4}
+var arreglo [10]int = [10]int{6, 98, 21, 674, 18, 36, 78, 9}
+
+func MuestroSlice() {
+  fmt.Println(tablaS)
+  porcion := arreglo[3:]   //Slice  creado desde un vector, desde la posición 3
+  porcion2 := arreglo[:5]  //Slice creado desde un vector, desde la posición 0 hasta la 5
+  porcion3 := arreglo[6:7] //Slice creado desde un vector, desde la posición 6 hasta la 7
+  fmt.Println(porcion)
+  fmt.Println(porcion2)
+  fmt.Println(porcion3)
+}
+```
+
+Lo potente de los slices es que puedes ajustar su capacidad dinámicamente utilizando la función 'make'. Aquí tienes un ejemplo:
+
+```go
+func Capacidad() {
+  elementos := make([]int, 5, 20)
+  fmt.Printf("Largo %d, Capacidad %d", len(elementos), cap(elementos))
+ 
+  nums := make([]int, 0, 0)
+  for i := 0; i < 100; i++ {
+    nums = append(nums, i)
+  }
+  fmt.Printf("\n Largo %d, Capacidad %d", len(nums), cap(nums))
 }
 ```

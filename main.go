@@ -1,13 +1,11 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/funciones"
+	arreglos_lices "Github/Ch1nolas/Curso-Go/arreglos_slices"
 )
 
 func main() {
-	funciones.Exponencia(2)
-
-	//funciones.LlamarClosure()
+	arreglos_lices.Capacidad()
 }
 
 /* Códigos de pruebas
@@ -42,8 +40,19 @@ default:
 
 	fmt.Println(ejercicios.TabladeMultiplicar())
 
+	Manejo de archivos
 	files.LeoArchivo()
 	files.SumaTabla()
 	files.GrabaTabla()
+
+	Funciones
+	funciones.Exponencia(2)
+	funciones.LlamarClosure()
+	funciones.Exponencia()
+
+	Arreglos y Slices
+	arreglos_lices.MuestroArreglos()
+	arreglos_lices.MuestroSlice()
+
 
 */
