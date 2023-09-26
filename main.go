@@ -5,7 +5,9 @@ import (
 )
 
 func main() {
-	funciones.LlamarClosure()
+	funciones.Exponencia(2)
+
+	//funciones.LlamarClosure()
 }
 
 /* Códigos de pruebas
