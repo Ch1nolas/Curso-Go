@@ -294,3 +294,47 @@ func Capacidad() {
   fmt.Printf("\n Largo %d, Capacidad %d", len(nums), cap(nums))
 }
 ```
+
+## Para los textos
+
+- `%d` Para armar un texto con una variable entera
+- `%s` Para armar un texto con una variable de tipo string
+- `%t` Para armar un texto con una variable de tipo bool
+
+## Mapas
+
+```go
+func MostrarMapas() {
+  paises := make(map[string]string) // Sintaxis del mapa
+  //fmt.Println(paises)
+
+  // Poner los mapas manualmente
+  paises["Mexico"] = "D.F"
+  paises["Argentina"] = "Buenos Aires"
+  fmt.Println(paises)
+  fmt.Println(paises["Argentina"])
+
+
+  //Sintaxis del mapa más rápida y con menos código
+  campeonato := map[string]int{
+    "Barcelona":    39,
+    "Real madrid":  38,
+    "Chivas":       37,
+    "Boca Juniors": 30,
+  }
+  fmt.Println(campeonato)
+
+
+  //Es como el foreach, para recorrer el mapa
+  for equipo, puntaje := range campeonato {
+      fmt.Printf("Equipo %s, tiene un puntaje de %d \n", equipo, puntaje)
+    }
+   
+  // Para borrar un elemento del mapa
+  delete(campeonato, "Real madrid")
+  fmt.Println(campeonato)
+ 
+  puntaje, existe := campeonato["Chivas"]
+  fmt.Printf("El puntaje captura es %d, y el equipo existe = %t \n", puntaje, existe)
+}
+```

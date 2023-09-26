@@ -1,11 +1,11 @@
 package main
 
 import (
-	arreglos_lices "Github/Ch1nolas/Curso-Go/arreglos_slices"
+	"Github/Ch1nolas/Curso-Go/mapas"
 )
 
 func main() {
-	arreglos_lices.Capacidad()
+	mapas.MostrarMapas()
 }
 
 /* Códigos de pruebas
@@ -53,6 +53,5 @@ default:
 	Arreglos y Slices
 	arreglos_lices.MuestroArreglos()
 	arreglos_lices.MuestroSlice()
-
-
+	arreglos_lices.Capacidad()
 */
