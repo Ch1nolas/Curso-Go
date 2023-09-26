@@ -176,3 +176,39 @@ func Iterar() {
 ```
 
 Donde acá omite al número 6 y sigue con el for
+
+## Manejo de archivos
+
+**Revisar y hacer teoría**
+
+## Funciones Anónimas
+
+```go
+func Calculos() {
+  suma := func(numero1 int, numero2 int) int {
+    return numero1 + numero2
+  }
+  fmt.Println(suma(10, 25))
+}
+```
+
+## Closures
+
+```go
+func tabla(valor int) func() int {
+  numero := valor
+  secuencia := 0
+  return func() int {
+    secuencia++
+    return numero * secuencia
+  }
+}
+
+func LlamarClosure() {
+  tabladel := 2
+  MiTabla := tabla(tabladel)
+  for i := 1; i <= 10; i++ {
+    fmt.Println(MiTabla())
+  }
+}
+```

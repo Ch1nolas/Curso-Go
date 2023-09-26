@@ -1,15 +1,11 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/files"
+	"Github/Ch1nolas/Curso-Go/funciones"
 )
 
 func main() {
-
-	files.LeoArchivo()
-	//files.SumaTabla()
-	//files.GrabaTabla()
-
+	funciones.LlamarClosure()
 }
 
 /* Códigos de pruebas
@@ -43,5 +39,9 @@ default:
 	fmt.Println(texto)
 
 	fmt.Println(ejercicios.TabladeMultiplicar())
+
+	files.LeoArchivo()
+	files.SumaTabla()
+	files.GrabaTabla()
 
 */
