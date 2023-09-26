@@ -1,3 +1,5 @@
+# Mi documentación
+
 Para iniciar un proyecto en go
 
 ```bash
@@ -115,3 +117,62 @@ num, __ := strconv.Atoi(texto)
 ```
 
 El paquete bufio sirve para la lectura del teclado, **Para tener en cuenta a la hora del Proyecto Integrador**
+
+# Iteraciones
+
+## Método for
+
+```go
+for i :=0; i<10; i++ {
+	fmt.Println(i)
+}
+```
+
+Para abortar se utiliza el **break** (corta todo el programa)
+
+```go
+func Iterar() {
+  for i := 0; i < 10; i++ {
+    if i == 6 {
+      break
+    }
+    fmt.Println(i)
+  }
+}
+```
+
+```bash
+1
+2
+3
+4
+5
+Se corta el programa
+```
+
+Y para continuar se utiliza el **continue**
+
+```go
+func Iterar() {
+  for i := 0; i < 10; i++ {
+    if i == 6 {
+      continue
+    }
+    fmt.Println(i)
+  }
+}
+```
+
+```shell
+0
+1
+2
+3
+4
+5
+7
+8
+9
+```
+
+Donde acá omite al número 6 y sigue con el for

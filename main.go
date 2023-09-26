@@ -1,11 +1,12 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/teclado"
+	"Github/Ch1nolas/Curso-Go/ejercicios"
 )
 
 func main() {
-	teclado.IngresoNumeros()
+	ejercicios.Tablademultilplicar()
+
 }
 
 /* Códigos de pruebas
