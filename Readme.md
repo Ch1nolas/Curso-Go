@@ -372,3 +372,51 @@ func AltaUsuario() {
   fmt.Println(u)
 }
 ```
+
+## Interfaces
+
+**Revisar la clase y completar la documentación**
+
+```go
+//Sintaxis de las interfaces
+type Humano interface {
+	Respirar()
+	Pensar()
+	Comer()
+	Sexo() string
+	EstaVivo() bool
+}
+```
+
+```go
+// Estructura del modelo y autocompletado de la interfaz
+type Hombre struct {
+	edad       int
+	altura     float32
+	peso       float32
+	respirando bool
+	comiendo   bool
+	pensando   bool
+	vivo       bool
+}
+
+func (h *Hombre) Respirar()    { h.respirando = true }
+func (h *Hombre) Comer()       { h.comiendo = true }
+func (h *Hombre) Pensar()      { h.pensando = true }
+func (h *Hombre) Sexo() string { return "Hombre" }
+```
+
+```go
+// Como lo fundamentamos en el main
+    Pedro := new(modelos.Hombre)
+	e.HumanosRespirando(Pedro)
+
+	Maria := new(modelos.Mujer)
+	e.HumanosRespirando(Maria)
+```
+
+**Resultado**
+
+```shel
+
+```

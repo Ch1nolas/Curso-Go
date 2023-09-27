@@ -1,11 +1,16 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/users"
+	e "Github/Ch1nolas/Curso-Go/ejer_interfaces"
+	"Github/Ch1nolas/Curso-Go/modelos"
 )
 
 func main() {
-	users.AltaUsuario()
+	Martin := new(modelos.Hombre)
+	e.HumanosRespirando(Martin)
+
+	Eva := new(modelos.Mujer)
+	e.HumanosRespirando(Eva)
 }
 
 /* Códigos de pruebas
@@ -57,4 +62,17 @@ default:
 
 	Mapas
 	mapas.MostrarMapas()
+
+	Modelos
+	users.AltaUsuario()
+
+
+	Interfaces
+	e "Github/Ch1nolas/Curso-Go/ejer_interfaces" //Se puede agregar un prefijo para los imports
+
+	Pedro := new(modelos.Hombre)
+	e.HumanosRespirando(Pedro)
+
+	Maria := new(modelos.Mujer)
+	e.HumanosRespirando(Maria)
 */
