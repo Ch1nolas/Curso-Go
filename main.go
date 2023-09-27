@@ -1,11 +1,17 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/defer_panic"
+	"Github/Ch1nolas/Curso-Go/goroutines"
+	"fmt"
 )
 
 func main() {
-	defer_panic.EjemloPanic()
+	go goroutines.MiNombreLentooo("Chinolas")
+
+	fmt.Println("Esto aqui")
+	var x string
+	fmt.Println(&x)
+
 }
 
 /* Códigos de pruebas
@@ -67,7 +73,9 @@ default:
 
 	Pedro := new(modelos.Hombre)
 	e.HumanosRespirando(Pedro)
-
 	Maria := new(modelos.Mujer)
 	e.HumanosRespirando(Maria)
+
+	defer_panic
+	defer_panic.EjemloPanic()
 */
