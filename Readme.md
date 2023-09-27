@@ -415,8 +415,43 @@ func (h *Hombre) Sexo() string { return "Hombre" }
 	e.HumanosRespirando(Maria)
 ```
 
-**Resultado**
+## Defer y Panic
 
-```shel
+**Defer**
 
+```go
+func VemosDefer() {
+	fmt.Println("Este es un primer mensaje")
+	defer fmt.Println("Este es el mensaje fnal")
+	fmt.Println("Este es el segundo mensaje")
+}
+```
+
+**Panic**
+Sirve para abortar el código y dejar un mensaje
+
+```go
+func EjemloPanic() {
+	a := 1
+	if a == 1 {
+		panic("Se encontró el valor 1")
+	}
+}
+```
+
+**Recover**
+
+```go
+func EjemloPanic() {
+	defer func() {
+		reco := recover()
+		if reco != nil {
+			log.Fatalf("Ocurrió un error que generó un panic \n %v", reco)
+		}
+	}()
+	a := 1
+	if a == 1 {
+		panic("Se encontró el valor 1")
+	}
+}
 ```

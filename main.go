@@ -1,16 +1,11 @@
 package main
 
 import (
-	e "Github/Ch1nolas/Curso-Go/ejer_interfaces"
-	"Github/Ch1nolas/Curso-Go/modelos"
+	"Github/Ch1nolas/Curso-Go/defer_panic"
 )
 
 func main() {
-	Martin := new(modelos.Hombre)
-	e.HumanosRespirando(Martin)
-
-	Eva := new(modelos.Mujer)
-	e.HumanosRespirando(Eva)
+	defer_panic.EjemloPanic()
 }
 
 /* Códigos de pruebas
