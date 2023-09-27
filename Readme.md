@@ -338,3 +338,37 @@ func MostrarMapas() {
   fmt.Printf("El puntaje captura es %d, y el equipo existe = %t \n", puntaje, existe)
 }
 ```
+
+## Estructura
+
+### Modelos
+
+```go
+// Modelo para los usuarios
+type User struct {
+  Id        int
+  Name      string
+  CreatedAt time.Time
+  Status    bool
+}
+
+//Definimos el modelo para luego crearlo desde el comando
+func (usuario *User) AddUser(id int, name string, createdAdd time.Time, status bool) {
+  usuario.Id = id
+  usuario.Name = name
+  usuario.CreatedAt = createdAdd
+  usuario.Status = status
+}
+```
+
+Función para crear el usuario
+
+```go
+import "Github/Ch1nolas/Curso-Go/modelos" //Hay que importar los modelos que tengamos
+
+func AltaUsuario() {
+  u := new(modelos.User)
+  u.AddUser(10, "Chinolas", time.Now(), true)
+  fmt.Println(u)
+}
+```

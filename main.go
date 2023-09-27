@@ -1,11 +1,11 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/mapas"
+	"Github/Ch1nolas/Curso-Go/users"
 )
 
 func main() {
-	mapas.MostrarMapas()
+	users.AltaUsuario()
 }
 
 /* Códigos de pruebas
@@ -54,4 +54,7 @@ default:
 	arreglos_lices.MuestroArreglos()
 	arreglos_lices.MuestroSlice()
 	arreglos_lices.Capacidad()
+
+	Mapas
+	mapas.MostrarMapas()
 */
