@@ -6,12 +6,13 @@ import (
 )
 
 func main() {
-	go goroutines.MiNombreLentooo("Chinolas")
 
-	fmt.Println("Esto aqui")
-	var x string
-	fmt.Println(&x)
-
+	canal1 := make(chan bool)
+	go goroutines.MiNombreLentooo("Chinolas", canal1)
+	defer func() {
+		<-canal1
+	}()
+	fmt.Println("Estoy aqui!")
 }
 
 /* Códigos de pruebas
