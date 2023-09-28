@@ -1,18 +1,12 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/goroutines"
-	"fmt"
+	"Github/Ch1nolas/Curso-Go/webserver"
 )
 
 func main() {
+	webserver.MiWebServer()
 
-	canal1 := make(chan bool)
-	go goroutines.MiNombreLentooo("Chinolas", canal1)
-	defer func() {
-		<-canal1
-	}()
-	fmt.Println("Estoy aqui!")
 }
 
 /* Códigos de pruebas
@@ -79,4 +73,12 @@ default:
 
 	defer_panic
 	defer_panic.EjemloPanic()
+
+	canales y funciones asincronas
+	canal1 := make(chan bool)
+	go goroutines.MiNombreLentooo("Chinolas", canal1)
+	defer func() {
+		<-canal1
+	}()
+	fmt.Println("Estoy aqui!")
 */
