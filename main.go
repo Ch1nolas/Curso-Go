@@ -1,12 +1,11 @@
 package main
 
 import (
-	"Github/Ch1nolas/Curso-Go/webserver"
+	"Github/Ch1nolas/Curso-Go/middleware"
 )
 
 func main() {
-	webserver.MiWebServer()
-
+	middleware.MiMiddleware()
 }
 
 /* Códigos de pruebas
@@ -81,4 +80,8 @@ default:
 		<-canal1
 	}()
 	fmt.Println("Estoy aqui!")
+
+	Webserver
+	webserver.MiWebServer()
+
 */
